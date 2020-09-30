@@ -1,0 +1,22 @@
+<p>Customers</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Identifier</th>
+      <th scope="col">Display Name</th>
+      <th scope="col">Contact Person</th>
+      <th scope="col">Financial Admins</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers; let i = index">
+      <th scope="row">{{ i + 1}}</th>
+      <td>{{customer.identifier}}</td>
+      <td>{{customer.displayName}}</td>
+      <td>{{customer.contactPerson?.fullName}}</td>
+      <td>{{customer.financialAdmins.join(", ")}}</td> <!-- This could have been done with a pipe to make it testable -->
+    </tr>
+  </tbody>
+</table>

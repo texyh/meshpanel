@@ -1,0 +1,15 @@
+<form #form='ngForm' (ngSubmit)="form.form.valid && onSubmit()">
+  <div class="form-group">
+    <label for="name">name</label>
+    <input type="text" required class="form-control" name="name" [(ngModel)]="payment.name" id="name" aria-describedby="name">
+  </div>
+  <div class="form-group">
+    <label for="amount">Amount</label>
+    <input type="number" required [(ngModel)]="payment.Amount" name="amount" class="form-control" id="amount">
+  </div>
+  <div class="form-group">
+    <label for="custom-attr">Custom Attributes(Comma seperated)</label>
+    <textarea class="form-control" id="custom-attr" required [(ngModel)]="customAttributes" name="custom-attr" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
